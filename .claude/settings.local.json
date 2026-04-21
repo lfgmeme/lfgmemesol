@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__claude_ai_Figma__get_screenshot",
+      "WebFetch(domain:lfgonpump.fun)",
+      "Bash(npm create *)",
+      "Bash(cp temp-app/eslint.config.js .)",
+      "Bash(cp temp-app/index.html .)",
+      "Bash(cp temp-app/package.json .)",
+      "Bash(cp temp-app/vite.config.js .)",
+      "Bash(cp -r temp-app/src .)",
+      "Bash(npm install *)",
+      "Bash(npm run *)"
+    ]
+  }
+}

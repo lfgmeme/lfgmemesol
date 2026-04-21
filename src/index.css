@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+/* ─── Rajdhani local font faces ─────────────── */
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('/font/Rajdhani/Rajdhani-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('/font/Rajdhani/Rajdhani-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('/font/Rajdhani/Rajdhani-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('/font/Rajdhani/Rajdhani-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Rajdhani';
+  src: url('/font/Rajdhani/Rajdhani-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Bebas Neue local font face ─────────────── */
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/font/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Finger Paint local font face ─────────────── */
+@font-face {
+  font-family: 'Finger Paint';
+  src: url('/font/Finger_Paint/FingerPaint-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #020509;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { width: 100%; }
+
+/* ─── Font utilities ─────────────────────────── */
+.font-finger { font-family: 'Finger Paint', cursive; }
+.font-bebas  { font-family: 'Bebas Neue', sans-serif; }
+.font-raj    { font-family: 'Rajdhani', sans-serif; }
+.font-inter  { font-family: 'Inter', sans-serif; }
+
+/* ─── Section backgrounds ───────────────────── */
+.bg-s1 {
+  background-image: url('/1%201.svg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.bg-s2 {
+  background-image: url('/2%201.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bg-s3 {
+  background-image: url('/3%202.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* ─── Gold glow ─────────────────────────────── */
+.gold-glow {
+  text-shadow:
+    0 0 24px rgba(240,191,34,0.65),
+    0 0 70px rgba(240,191,34,0.25);
+}
+
+/* ─── Floating animation ─────────────────────── */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-18px); }
+}
+.float { animation: floatY 4.5s ease-in-out infinite; }
+
+/* ─── Navbar link hover underline ───────────── */
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: #F0BF22;
+  transition: width 0.22s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ─── Scroll‑linked parallax hint ───────────── */
+.hero-char { will-change: transform; }
