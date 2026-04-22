@@ -129,3 +129,17 @@ body {
 
 /* ─── Scroll‑linked parallax hint ───────────── */
 .hero-char { will-change: transform; }
+
+/* ─── Mobile 15px horizontal padding ────────── */
+/* Tailwind utilities lose to the unlayered * reset above,        */
+/* so we define this outside any @layer for guaranteed specificity */
+.mob-px {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 1024px) {
+  .mob-px {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

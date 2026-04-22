@@ -91,7 +91,7 @@ function Navbar() {
       </div>
 
       {/* Mobile */}
-      <div className="lg:hidden flex items-center justify-between h-full px-[15px]">
+      <div className="mob-px lg:hidden flex items-center justify-between h-full">
         <a href="#hero">
           <img src="/Container.svg" alt="LFG" style={{ width: 100, height: 44 }} />
         </a>
@@ -112,7 +112,7 @@ function Navbar() {
 
       {open && (
         <div
-          className="lg:hidden px-[15px] pt-2 pb-5 flex flex-col gap-1"
+          className="mob-px lg:hidden pt-2 pb-5 flex flex-col gap-1"
           style={{ background: 'rgba(2,5,9,0.97)', borderTop: '1px solid rgba(240,191,34,0.07)' }}
         >
           {NAV_LINKS.map(l => (
@@ -144,7 +144,6 @@ function Navbar() {
 // 2. Hero
 // ─────────────────────────────────────────────────────────
 function Hero() {
-  const [copied, copy] = useCopy(CA)
   return (
     <section
       id="hero"
@@ -152,7 +151,7 @@ function Hero() {
       style={{ paddingTop: 81 }}
     >
       <div
-        className="relative z-10 w-full flex items-center px-[15px] lg:px-20"
+        className="mob-px relative z-10 w-full flex items-center"
         style={{ maxWidth: 1440, margin: '0 auto', paddingTop: 48, paddingBottom: 100 }}
       >
         {/* Content */}
@@ -268,7 +267,7 @@ function Hero() {
 function Lore() {
   return (
     <section id="lore" className="relative py-10 lg:py-12">
-      <div className="px-[15px] lg:px-20" style={{ maxWidth: 1440, margin: '0 auto' }}>
+      <div className="mob-px" style={{ maxWidth: 1440, margin: '0 auto' }}>
         <div
           className="bg-s2 rounded-3xl text-center my-5"
           style={{
@@ -326,7 +325,7 @@ function Tokenomics() {
     { value: '100%', label: 'COMMUNITY' },
   ]
   return (
-    <section id="tokenomics" className="bg-s2 relative py-10 lg:py-12 px-[15px] mb-16 lg:mb-32 overflow-hidden">
+    <section id="tokenomics" className="mob-px bg-s2 relative py-10 lg:py-12 mb-16 lg:mb-32 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-28 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
       <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none" style={{ background: 'linear-gradient(to top, #020509, transparent)' }} />
 
@@ -402,7 +401,7 @@ function MemeGallery() {
   const visible = MEME_ICONS.slice(page * perPage, page * perPage + perPage)
 
   return (
-    <section id="gallery" className="py-10 lg:py-12 px-[15px]" style={{ background: '#020509' }}>
+    <section id="gallery" className="mob-px py-10 lg:py-12" style={{ background: '#020509' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <h2
           className="text-center"
@@ -489,7 +488,7 @@ function MemeGallery() {
 // ─────────────────────────────────────────────────────────
 function Roadmap() {
   return (
-    <section id="roadmap" className="bg-s3 relative py-10 lg:py-12 px-[15px] mt-10 lg:mt-20 overflow-hidden">
+    <section id="roadmap" className="mob-px bg-s3 relative py-10 lg:py-12 mt-10 lg:mt-20 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
       <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to top, #020509, transparent)' }} />
 
@@ -565,7 +564,7 @@ function HowToBuy() {
     { num: '03', title: 'SWAP FOR LFG', desc: 'Go to Jupiter, swap inside Phantom, or use PumpFun App to buy. Paste CA, swap SOL for $LFG.' },
   ]
   return (
-    <section id="howtobuy" className="relative py-10 lg:py-12 px-[15px]" style={{ background: '#020509' }}>
+    <section id="howtobuy" className="mob-px relative py-10 lg:py-12" style={{ background: '#020509' }}>
       <div className="relative z-10" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <h2
           className="text-center"
@@ -625,7 +624,7 @@ function HowToBuy() {
 function Footer() {
   const [copied, copy] = useCopy(CA)
   return (
-    <footer id="footer" className="bg-s3 relative py-10 lg:py-12 px-[15px] overflow-hidden">
+    <footer id="footer" className="mob-px bg-s3 relative py-10 lg:py-12 overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
       <div className="absolute inset-x-0 bottom-0 h-20 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(2,5,9,0.9), transparent)' }} />
 
