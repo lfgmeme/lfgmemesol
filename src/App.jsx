@@ -74,12 +74,12 @@ function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          {/* <a href="#" aria-label="Telegram"
+          <a href="https://t.me/LFGsolana" target="_blank" rel="noopener noreferrer" aria-label="Telegram"
             className="flex items-center justify-center transition-opacity hover:opacity-100"
             style={{ width: 32, height: 32, opacity: 0.45 }}
           >
             <img src="/telegram.svg" alt="Telegram" width={20} height={20} />
-          </a> */}
+          </a>
           <a href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
             className="flex items-center justify-center transition-opacity hover:opacity-100"
             style={{ width: 32, height: 32, opacity: 0.45 }}
@@ -134,13 +134,15 @@ function Navbar() {
             style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover', objectPosition: 'center top', zIndex: 0, pointerEvents: 'none' }}
           />
 
+
           {/* all content sits above the tint */}
           <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', flex: 1 }}>
 
             {/* Header */}
             <div
-              style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', padding: '0 20px', height: 72, borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', height: 72, borderBottom: '1px solid rgba(255,255,255,0.07)' }}
             >
+              <img src="/Container.svg" alt="LFG" style={{ width: 100, height: 44 }} />
               <button
                 onClick={() => setOpen(false)}
                 aria-label="Close menu"
@@ -188,13 +190,20 @@ function Navbar() {
 
             {/* Footer area */}
             <div style={{ padding: '20px', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16, gap: 12 }}>
                 <a
                   href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
                   aria-label="X / Twitter"
                   style={{ width: 40, height: 40, borderRadius: 10, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
                 >
                   <img src="/x.svg" alt="X" width={16} height={16} style={{ filter: 'brightness(0) invert(1)' }} />
+                </a>
+                <a
+                  href="https://t.me/LFGsolana" target="_blank" rel="noopener noreferrer"
+                  aria-label="Telegram"
+                  style={{ width: 40, height: 40, borderRadius: 10, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                >
+                  <img src="/telegram.svg" alt="Telegram" width={16} height={16} style={{ filter: 'brightness(0) invert(1)' }} />
                 </a>
               </div>
               <a
@@ -309,8 +318,8 @@ function Hero() {
               <img
                 src="/pppng 2.svg"
                 alt="LFG Character"
-                className="hero-char select-none vibrate fish-interactive"
-                style={{ width: 'clamp(240px, 34vw, 480px)', filter: 'drop-shadow(0 0 60px rgba(240,191,34,0.3))' }}
+                className="hero-char select-none vibrate fish-interactive crazy-1"
+                style={{ width: 'clamp(240px, 34vw, 480px)', filter: 'drop-shadow(0 0 60px rgba(240,191,34,0.3))', animationDelay: '0.15s' }}
                 draggable={false}
               />
             </div>
@@ -327,8 +336,8 @@ function Hero() {
           <img
             src="/pppng 2.svg"
             alt=""
-            className="select-none vibrate fish-interactive"
-            style={{ width: 'clamp(200px, 55vw, 300px)', filter: 'drop-shadow(0 0 30px rgba(240,191,34,0.3))' }}
+            className="select-none vibrate fish-interactive crazy-2"
+            style={{ width: 'clamp(200px, 55vw, 300px)', filter: 'drop-shadow(0 0 30px rgba(240,191,34,0.3))', animationDelay: '0.4s' }}
             draggable={false}
           />
         </div>
@@ -374,7 +383,7 @@ function Lore() {
             style={{
               fontFamily: 'Rajdhani, sans-serif',
               fontSize: 'clamp(15px, 3.5vw, 18px)',
-              color: 'rgba(255,255,255,0.55)',
+              color: '#ffffff',
               lineHeight: 1.95,
               maxWidth: 560,
               margin: '0 auto 24px',
@@ -388,7 +397,7 @@ function Lore() {
           <p style={{ fontFamily: "'Finger Paint', cursive", fontSize: 'clamp(14px, 3.5vw, 18px)', color: GOLD }}>
             Zero promises. Dank vibes. Maximum chaos.
           </p>
-          <img src="/favicon.svg" alt="icon" style={{ width: 32, height: 32, margin: '24px auto 0' }} />
+          <img src="/favicon.svg" alt="icon" className="crazy-3" style={{ width: 56, height: 56, margin: '24px auto 0', animationDelay: '0.7s' }} />
         </div>
       </div>
     </section>
@@ -464,7 +473,7 @@ function Tokenomics() {
             </div>
           ))}
         </div>
-        <img src="/favicon.svg" alt="icon" style={{ width: 44, height: 44, margin: '40px auto 0', filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
+        <img src="/favicon.svg" alt="icon" className="crazy-4" style={{ width: 44, height: 44, margin: '40px auto 0', filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))', animationDelay: '0.2s' }} />
       </div>
     </section>
   )
@@ -480,6 +489,19 @@ function MemeGallery() {
   const perPage = 8
   const pages = Math.ceil(MEME_ICONS.length / perPage)
   const visible = MEME_ICONS.slice(page * perPage, page * perPage + perPage)
+
+  useEffect(() => {
+    const preload = (p) => {
+      if (p < 0 || p >= pages) return
+      const batch = MEME_ICONS.slice(p * perPage, p * perPage + perPage)
+      batch.forEach(icon => {
+        const img = new Image()
+        img.src = `/icons/${icon}`
+      })
+    }
+    preload(page + 1)
+    preload(page - 1)
+  }, [page, pages])
 
   return (
     <section id="gallery" className="mob-px py-10 lg:py-12" style={{ background: '#020509' }}>
@@ -513,7 +535,7 @@ function MemeGallery() {
           <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
             {visible.map((icon, i) => (
               <div
-                key={i}
+                key={`${page}-${i}`}
                 className="aspect-square flex items-center justify-center transition-transform hover:scale-105"
                 style={{
                   background: 'rgba(11,16,32,0.4)',
@@ -522,8 +544,24 @@ function MemeGallery() {
                   overflow: 'hidden',
                 }}
               >
-                <img src={`/icons/${icon}`} alt="meme" style={{ width: '80%', height: '80%', objectFit: 'contain' }} />
+                <img 
+                  src={`/icons/${icon}`} 
+                  alt="meme" 
+                  style={{ width: '80%', height: '80%', objectFit: 'contain' }} 
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
+            ))}
+          </div>
+
+          {/* Hidden preloader for next batch */}
+          <div style={{ display: 'none' }} aria-hidden="true">
+            {MEME_ICONS.slice((page + 1) * perPage, (page + 1) * perPage + perPage).map((icon, i) => (
+              <img key={`next-${i}`} src={`/icons/${icon}`} alt="" loading="eager" />
+            ))}
+            {page > 0 && MEME_ICONS.slice((page - 1) * perPage, (page - 1) * perPage + perPage).map((icon, i) => (
+              <img key={`prev-${i}`} src={`/icons/${icon}`} alt="" loading="eager" />
             ))}
           </div>
 
@@ -628,7 +666,7 @@ function Roadmap() {
                 borderRadius: 16,
               }}
             >
-              <img src="/favicon.svg" alt="icon" style={{ width: 40, height: 40, marginBottom: 12, filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.25))' }} />
+              <img src="/favicon.svg" alt="icon" className={`crazy-${(i % 5) + 1}`} style={{ width: 40, height: 40, marginBottom: 12, filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.25))', animationDelay: `${i * 0.25}s` }} />
               <p
                 style={{
                   fontFamily: 'Rajdhani, sans-serif',
@@ -687,41 +725,42 @@ function HowToBuy() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-4 lg:gap-8">
-          {steps.map(s => (
+          {steps.map((s, i) => (
             <div
               key={s.num}
-              className="flex flex-col items-center text-center px-6 pt-6 pb-10 lg:px-10 lg:pt-10 lg:pb-14"
+              className="flex flex-col items-center text-center px-6 pt-16 pb-16 lg:px-10 lg:pt-20 lg:pb-20"
               style={{
                 background: '#0B1020',
                 border: '1px solid rgba(255,255,255,0.07)',
                 borderRadius: 20,
               }}
             >
-              <img
-                src="/favicon.svg"
-                alt="icon"
-                style={{ width: 48, height: 48, marginTop: 16, marginBottom: 14, filter: 'drop-shadow(0 0 12px rgba(240,191,34,0.4))' }}
-              />
-              <span
-                className="gold-glow"
-                style={{
-                  fontFamily: "'Finger Paint', cursive",
-                  fontSize: 'clamp(40px, 8vw, 56px)',
-                  color: GOLD,
-                  lineHeight: 1,
-                  display: 'block',
-                  marginBottom: 12,
-                }}
-              >
-                {s.num}
-              </span>
+              <div className="flex items-center gap-4" style={{ marginTop: 15, marginBottom: 5 }}>
+                <img
+                  src="/pppng%202%20(1).svg"
+                  alt="character"
+                  className={`crazy-${((i + 2) % 5) + 1}`}
+                  style={{ width: 52, height: 52, animationDelay: `${i * 0.4}s` }}
+                />
+                <span
+                  className="gold-glow"
+                  style={{
+                    fontFamily: "'Finger Paint', cursive",
+                    fontSize: 'clamp(32px, 6vw, 48px)',
+                    color: GOLD,
+                    lineHeight: 1,
+                  }}
+                >
+                  {s.num}
+                </span>
+              </div>
               <h3
                 style={{
                   fontFamily: "'Bebas Neue', sans-serif",
                   fontSize: 20,
                   color: '#fff',
                   letterSpacing: '1.5px',
-                  marginBottom: 10,
+                  marginBottom: 4,
                 }}
               >
                 {s.title}
@@ -766,7 +805,7 @@ function Footer() {
           >
             LFG
           </p>
-          <img src="/favicon.svg" alt="LFG" style={{ width: 56, height: 56, filter: 'drop-shadow(0 0 15px rgba(240,191,34,0.4))' }} />
+          <img src="/favicon.svg" alt="LFG" className="crazy-5" style={{ width: 56, height: 56, filter: 'drop-shadow(0 0 15px rgba(240,191,34,0.4))', animationDelay: '1.2s' }} />
         </div>
 
         {/* CA pill */}
@@ -839,6 +878,14 @@ function Footer() {
             style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.06)' }}
           >
             <img src="/x.svg" alt="X / Twitter" width={14} height={14} style={{ filter: 'brightness(0) invert(1)' }} />
+          </a>
+          <a
+            href="https://t.me/LFGsolana" target="_blank" rel="noopener noreferrer"
+            aria-label="Telegram"
+            className="w-11 h-11 rounded-full flex items-center justify-center transition hover:opacity-80 cursor-pointer"
+            style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.06)' }}
+          >
+            <img src="/telegram.svg" alt="Telegram" width={14} height={14} style={{ filter: 'brightness(0) invert(1)' }} />
           </a>
         </div>
 
