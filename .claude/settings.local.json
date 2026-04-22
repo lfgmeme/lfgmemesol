@@ -11,7 +11,22 @@
       "Bash(cp temp-app/vite.config.js .)",
       "Bash(cp -r temp-app/src .)",
       "Bash(npm install *)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git -C c:/work/lfgmemesol ls-files node_modules)",
+      "Bash(git -C c:/work/lfgmemesol rm -r --cached node_modules dist)",
+      "Bash(git -C c:/work/lfgmemesol push)",
+      "Bash(python3 C:/Users/User/.claude/skills/ui-ux-pro-max/scripts/search.py \"meme crypto landing page dark mobile responsive\" --design-system -p \"LFG Meme Sol\")",
+      "Bash(python C:/Users/User/.claude/skills/ui-ux-pro-max/scripts/search.py \"meme crypto landing page dark mobile responsive\" --design-system -p \"LFG Meme Sol\")",
+      "Bash(git -C c:/work/lfgmemesol add src/App.jsx)",
+      "Bash(git -C c:/work/lfgmemesol commit -m ' *)",
+      "Bash(git -C c:/work/lfgmemesol add src/App.jsx src/index.css)",
+      "Bash(git -C c:/work/lfgmemesol commit -m \"comment out telegram icon, no TG yet\")",
+      "Bash(git -C c:/work/lfgmemesol commit -m \"roadmap: all 5 cards full white \\(border, labels, text\\)\")",
+      "Read(//c/Users/User/.claude/skills/ui-ux-pro-max/**)",
+      "Bash(python scripts/search.py \"crypto meme coin dark navigation mobile drawer\" --design-system -f markdown)"
     ]
   }
 }

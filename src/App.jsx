@@ -90,7 +90,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile */}
+      {/* Mobile header bar */}
       <div className="mob-px lg:hidden flex items-center justify-between h-full">
         <a href="#hero">
           <img src="/Container.svg" alt="LFG" style={{ width: 100, height: 44 }} />
@@ -102,41 +102,109 @@ function Navbar() {
           style={{ width: 44, height: 44 }}
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-            {open
-              ? <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
-              : <><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></>
-            }
+            <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
           </svg>
         </button>
       </div>
 
+      {/* Full-screen menu */}
       {open && (
         <div
-          className="mob-px lg:hidden pt-2 pb-5 flex flex-col gap-1"
-          style={{ background: 'rgba(2,5,9,0.97)', borderTop: '1px solid rgba(240,191,34,0.07)' }}
+          className="lg:hidden"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 50,
+            display: 'flex',
+            flexDirection: 'column',
+            animation: 'slideInRight 0.25s cubic-bezier(0.32,0.72,0,1)',
+          }}
         >
-          {NAV_LINKS.map(l => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="uppercase text-white/55 hover:text-[#F0BF22] transition-colors cursor-pointer"
-              style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 15, letterSpacing: '0.7px', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
+          {/* background image */}
+          <img
+            src="/1%201.svg"
+            alt=""
+            aria-hidden="true"
+            style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', objectFit: 'cover', objectPosition: 'center top', zIndex: 0, pointerEvents: 'none' }}
+          />
+
+          {/* all content sits above the tint */}
+          <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', flex: 1 }}>
+
+            {/* Header */}
+            <div
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', padding: '0 20px', height: 72, borderBottom: '1px solid rgba(255,255,255,0.07)' }}
             >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="uppercase text-black text-center hover:brightness-110 transition cursor-pointer mt-3"
-            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 13, background: GOLD, borderRadius: 100, padding: '11px 20px', textDecoration: 'none' }}
-          >
-            JOIN THE CULT
-          </a>
+              <button
+                onClick={() => setOpen(false)}
+                aria-label="Close menu"
+                style={{
+                  width: 40, height: 40,
+                  borderRadius: 10,
+                  border: '1px solid rgba(255,255,255,0.15)',
+                  background: 'rgba(255,255,255,0.06)',
+                  color: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  cursor: 'pointer',
+                }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Nav items */}
+            <nav style={{ display: 'flex', flexDirection: 'column', flex: 1, padding: '8px 0' }}>
+              {NAV_LINKS.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    padding: '0 20px',
+                    height: 64,
+                    textDecoration: 'none',
+                    borderBottom: '1px solid rgba(255,255,255,0.06)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 17, fontWeight: 700, color: '#fff', letterSpacing: '0.8px', textTransform: 'uppercase' }}>
+                    {l.label}
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </a>
+              ))}
+            </nav>
+
+            {/* Footer area */}
+            <div style={{ padding: '20px', borderTop: '1px solid rgba(255,255,255,0.07)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 16 }}>
+                <a
+                  href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
+                  aria-label="X / Twitter"
+                  style={{ width: 40, height: 40, borderRadius: 10, border: '1px solid rgba(255,255,255,0.15)', background: 'rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}
+                >
+                  <img src="/x.svg" alt="X" width={16} height={16} style={{ filter: 'brightness(0) invert(1)' }} />
+                </a>
+              </div>
+              <a
+                href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: "'Finger Paint', cursive", fontSize: 13, color: '#000', background: GOLD, borderRadius: 100, height: 48, textDecoration: 'none', letterSpacing: '0.3px', textTransform: 'uppercase', cursor: 'pointer' }}
+              >
+                JOIN THE CULT
+              </a>
+            </div>
+
+          </div>
         </div>
       )}
     </header>
+
   )
 }
 
@@ -185,8 +253,8 @@ function Hero() {
           <p
             style={{
               fontFamily: 'Rajdhani, sans-serif',
-              fontSize: 'clamp(15px, 3.5vw, 20px)',
-              color: 'rgba(255,255,255,0.6)',
+              fontSize: 'clamp(17px, 3.8vw, 23px)',
+              color: '#ffffff',
               marginBottom: 32,
               lineHeight: 1.6,
               maxWidth: 380,
@@ -229,28 +297,35 @@ function Hero() {
 
         {/* Desktop fish */}
         <div className="hidden lg:flex flex-1 justify-end items-center">
-          <img
-            src="/pppng 2.svg"
-            alt="LFG Character"
-            className="float hero-char select-none"
-            style={{ width: 'clamp(320px, 45vw, 640px)', filter: 'drop-shadow(0 0 60px rgba(240,191,34,0.3))' }}
-            draggable={false}
-          />
+          {/* outer: float up/down | inner: vibrate jitter */}
+          <div className="float" style={{ lineHeight: 0 }}>
+            <div className="fish-bump" style={{ lineHeight: 0 }}>
+              <img
+                src="/pppng 2.svg"
+                alt="LFG Character"
+                className="hero-char select-none vibrate fish-interactive"
+                style={{ width: 'clamp(240px, 34vw, 480px)', filter: 'drop-shadow(0 0 60px rgba(240,191,34,0.3))' }}
+                draggable={false}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Mobile fish — larger + more visible */}
       <div
-        className="lg:hidden flex justify-center"
-        style={{ position: 'absolute', bottom: 0, left: 0, right: 0, opacity: 0.55, pointerEvents: 'none' }}
+        className="lg:hidden flex justify-center float"
+        style={{ position: 'absolute', bottom: 0, left: 0, right: 0, opacity: 0.55 }}
       >
-        <img
-          src="/pppng 2.svg"
-          alt=""
-          className="select-none float"
-          style={{ width: 'clamp(200px, 55vw, 300px)', filter: 'drop-shadow(0 0 30px rgba(240,191,34,0.3))' }}
-          draggable={false}
-        />
+        <div className="fish-bump" style={{ lineHeight: 0 }}>
+          <img
+            src="/pppng 2.svg"
+            alt=""
+            className="select-none vibrate fish-interactive"
+            style={{ width: 'clamp(200px, 55vw, 300px)', filter: 'drop-shadow(0 0 30px rgba(240,191,34,0.3))' }}
+            draggable={false}
+          />
+        </div>
       </div>
 
       <div
@@ -417,11 +492,12 @@ function MemeGallery() {
           MEME <span style={{ color: GOLD }}>GALLERY</span>
         </h2>
 
+        {/* Desktop: arrows on sides | Mobile: arrows hidden here */}
         <div className="flex items-center gap-3 lg:gap-8">
           <button
             onClick={() => setPage(p => Math.max(0, p - 1))}
             disabled={page === 0}
-            className="flex-shrink-0 flex items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
+            className="hidden sm:flex flex-shrink-0 items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
             style={{ width: 44, height: 44, fontSize: 44, lineHeight: 1, fontFamily: 'serif' }}
             aria-label="Previous"
           >
@@ -448,7 +524,7 @@ function MemeGallery() {
           <button
             onClick={() => setPage(p => Math.min(pages - 1, p + 1))}
             disabled={page >= pages - 1}
-            className="flex-shrink-0 flex items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
+            className="hidden sm:flex flex-shrink-0 items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
             style={{ width: 44, height: 44, fontSize: 44, lineHeight: 1, fontFamily: 'serif' }}
             aria-label="Next"
           >
@@ -456,27 +532,52 @@ function MemeGallery() {
           </button>
         </div>
 
-        {/* Pagination dots */}
-        <div className="flex items-center justify-center gap-1.5 mt-6">
-          {Array.from({ length: Math.min(pages, 10) }).map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i)}
-              className="transition-all cursor-pointer"
-              style={{
-                width: i === page ? 20 : 6,
-                height: 6,
-                borderRadius: 3,
-                background: i === page ? GOLD : 'rgba(255,255,255,0.2)',
-              }}
-              aria-label={`Page ${i + 1}`}
-            />
-          ))}
-          {pages > 10 && (
-            <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.3)', marginLeft: 4 }}>
-              {page + 1}/{pages}
-            </span>
-          )}
+        {/* Pagination dots + mobile arrows */}
+        <div className="flex items-center justify-center gap-3 mt-6">
+          {/* Mobile prev arrow */}
+          <button
+            onClick={() => setPage(p => Math.max(0, p - 1))}
+            disabled={page === 0}
+            className="sm:hidden flex items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
+            style={{ width: 36, height: 36, fontSize: 36, lineHeight: 1, fontFamily: 'serif' }}
+            aria-label="Previous"
+          >
+            ‹
+          </button>
+
+          {/* Dots */}
+          <div className="flex items-center justify-center gap-1.5">
+            {Array.from({ length: Math.min(pages, 10) }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i)}
+                className="transition-all cursor-pointer"
+                style={{
+                  width: i === page ? 20 : 6,
+                  height: 6,
+                  borderRadius: 3,
+                  background: i === page ? GOLD : 'rgba(255,255,255,0.2)',
+                }}
+                aria-label={`Page ${i + 1}`}
+              />
+            ))}
+            {pages > 10 && (
+              <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.3)', marginLeft: 4 }}>
+                {page + 1}/{pages}
+              </span>
+            )}
+          </div>
+
+          {/* Mobile next arrow */}
+          <button
+            onClick={() => setPage(p => Math.min(pages - 1, p + 1))}
+            disabled={page >= pages - 1}
+            className="sm:hidden flex items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
+            style={{ width: 36, height: 36, fontSize: 36, lineHeight: 1, fontFamily: 'serif' }}
+            aria-label="Next"
+          >
+            ›
+          </button>
         </div>
       </div>
     </section>
@@ -507,12 +608,12 @@ function Roadmap() {
           ROAD<span style={{ color: GOLD }}>MAP</span>
         </h2>
 
-        {/* 2-col on mobile, 5-col on lg */}
+        {/* 2x2 + full-width last on mobile, 5-col on lg */}
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           {ROADMAP.map((phase, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center text-center p-5 lg:p-6"
+              className={`flex flex-col items-center justify-center text-center p-5 lg:p-6${i === ROADMAP.length - 1 ? ' col-span-2 lg:col-span-1' : ''}`}
               style={{
                 minHeight: 140,
                 background: 'rgba(11,16,32,0.2)',
@@ -583,29 +684,51 @@ function HowToBuy() {
           {steps.map(s => (
             <div
               key={s.num}
-              className="flex flex-col p-5 lg:p-9"
+              className="flex flex-col items-center text-center px-6 pt-6 pb-10 lg:px-10 lg:pt-10 lg:pb-14"
               style={{
                 background: '#0B1020',
                 border: '1px solid rgba(255,255,255,0.07)',
-                borderRadius: 16,
+                borderRadius: 20,
               }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <img src="/favicon.svg" alt="icon" style={{ width: 40, height: 40, filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
-                <span
-                  className="gold-glow"
-                  style={{ fontFamily: "'Finger Paint', cursive", fontSize: 'clamp(36px, 8vw, 52px)', color: GOLD, lineHeight: 1, display: 'block' }}
-                >
-                  {s.num}
-                </span>
-              </div>
+              <img
+                src="/favicon.svg"
+                alt="icon"
+                style={{ width: 48, height: 48, marginTop: 16, marginBottom: 14, filter: 'drop-shadow(0 0 12px rgba(240,191,34,0.4))' }}
+              />
+              <span
+                className="gold-glow"
+                style={{
+                  fontFamily: "'Finger Paint', cursive",
+                  fontSize: 'clamp(40px, 8vw, 56px)',
+                  color: GOLD,
+                  lineHeight: 1,
+                  display: 'block',
+                  marginBottom: 12,
+                }}
+              >
+                {s.num}
+              </span>
               <h3
-                style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: '#fff', letterSpacing: '1px', marginBottom: 10 }}
+                style={{
+                  fontFamily: "'Bebas Neue', sans-serif",
+                  fontSize: 20,
+                  color: '#fff',
+                  letterSpacing: '1.5px',
+                  marginBottom: 10,
+                }}
               >
                 {s.title}
               </h3>
               <p
-                style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 15, color: '#99A1AF', lineHeight: 1.6 }}
+                style={{
+                  fontFamily: 'Rajdhani, sans-serif',
+                  fontSize: 15,
+                  color: '#99A1AF',
+                  lineHeight: 1.65,
+                  maxWidth: 220,
+                  marginBottom: 16,
+                }}
               >
                 {s.desc}
               </p>
@@ -623,13 +746,14 @@ function HowToBuy() {
 function Footer() {
   const [copied, copy] = useCopy(CA)
   return (
-    <footer id="footer" className="mob-px bg-s3 relative py-10 lg:py-12 overflow-hidden">
+    <footer id="footer" className="mob-px bg-s3 relative overflow-hidden" style={{ paddingTop: 72, paddingBottom: 56 }}>
       <div className="absolute inset-x-0 top-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
       <div className="absolute inset-x-0 bottom-0 h-20 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(2,5,9,0.9), transparent)' }} />
 
       <div className="relative z-10 flex flex-col items-center text-center" style={{ maxWidth: 640, margin: '0 auto' }}>
-        {/* LFG text + logo */}
-        <div className="flex items-center justify-center gap-4 mb-7 w-full">
+
+        {/* Logo + icon */}
+        <div className="flex items-center justify-center gap-4" style={{ marginBottom: 28 }}>
           <p
             className="gold-glow"
             style={{ fontFamily: "'Finger Paint', cursive", fontSize: 'clamp(44px, 12vw, 64px)', color: GOLD, lineHeight: 1 }}
@@ -642,18 +766,17 @@ function Footer() {
         {/* CA pill */}
         <button
           onClick={copy}
-          className="flex items-center gap-2 mx-auto mb-6 transition hover:opacity-80 active:scale-[0.98] cursor-pointer w-full"
+          className="flex items-center gap-2 mx-auto transition hover:opacity-80 active:scale-[0.98] cursor-pointer w-full"
           style={{
             background: '#0B1020',
             borderRadius: 100,
             padding: '11px 16px',
             border: '1px solid rgba(255,255,255,0.08)',
             maxWidth: 420,
+            marginBottom: 32,
           }}
         >
-          <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.35)', flexShrink: 0 }}>
-            CA:
-          </span>
+          <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.35)', flexShrink: 0 }}>CA:</span>
           <span
             style={{
               fontFamily: 'Inter, monospace',
@@ -680,10 +803,10 @@ function Footer() {
           style={{
             fontFamily: 'Rajdhani, sans-serif',
             fontSize: 'clamp(14px, 3.5vw, 16px)',
-            color: '#fff',
-            lineHeight: 1.7,
+            color: 'rgba(255,255,255,0.7)',
+            lineHeight: 1.75,
             maxWidth: 480,
-            margin: '0 auto 28px',
+            marginBottom: 36,
           }}
         >
           $LFG is a meme coin with no intrinsic value or financial return expectation.
@@ -691,32 +814,25 @@ function Footer() {
         </p>
 
         {/* JOIN THE CULT */}
-        <div className="flex justify-center mb-7 w-full">
+        <div className="flex justify-center w-full" style={{ marginBottom: 32 }}>
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             className="uppercase text-black hover:brightness-110 transition whitespace-nowrap cursor-pointer"
-            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, background: GOLD, borderRadius: 100, padding: '12px 28px', textDecoration: 'none', display: 'inline-block' }}
+            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, background: GOLD, borderRadius: 100, padding: '13px 32px', textDecoration: 'none', display: 'inline-block' }}
           >
             JOIN THE CULT
           </a>
         </div>
 
         {/* Social icons */}
-        <div className="flex items-center justify-center gap-3 mb-7 w-full">
-          {/* <a
-            href="#" aria-label="Telegram"
-            className="w-11 h-11 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100 cursor-pointer"
-            style={{ border: '1px solid rgba(255,255,255,0.12)', opacity: 0.4 }}
-          >
-            <img src="/telegram.svg" alt="Telegram" width={16} height={16} />
-          </a> */}
+        <div className="flex items-center justify-center gap-3 w-full" style={{ marginBottom: 36 }}>
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             aria-label="X / Twitter"
-            className="w-11 h-11 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100 cursor-pointer"
-            style={{ border: '1px solid rgba(255,255,255,0.12)', opacity: 0.4 }}
+            className="w-11 h-11 rounded-full flex items-center justify-center transition hover:opacity-80 cursor-pointer"
+            style={{ border: '1px solid rgba(255,255,255,0.3)', background: 'rgba(255,255,255,0.06)' }}
           >
-            <img src="/x.svg" alt="X / Twitter" width={14} height={14} />
+            <img src="/x.svg" alt="X / Twitter" width={14} height={14} style={{ filter: 'brightness(0) invert(1)' }} />
           </a>
         </div>
 
@@ -724,6 +840,7 @@ function Footer() {
         <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.2)' }}>
           © 2026 LFG. Built by the cult, for the cult.
         </p>
+
       </div>
     </footer>
   )

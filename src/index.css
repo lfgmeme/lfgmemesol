@@ -105,12 +105,97 @@ body {
     0 0 70px rgba(240,191,34,0.25);
 }
 
+/* ─── Right-side drawer slide-in ────────────── */
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
 /* ─── Floating animation ─────────────────────── */
 @keyframes floatY {
   0%, 100% { transform: translateY(0); }
   50%       { transform: translateY(-18px); }
 }
 .float { animation: floatY 4.5s ease-in-out infinite; }
+
+/* ─── Fish: periodic bump frenzy (every 3s) ─── */
+@keyframes fishBump {
+  0%,  50%  { transform: translate(0, 0)     rotate(0deg)   scale(1);    }
+  52%        { transform: translate(-40px, 0)  rotate(-8deg)  scale(1.05); }
+  55%        { transform: translate( 40px, 0)  rotate( 8deg)  scale(1.05); }
+  58%        { transform: translate(0, -38px)  rotate(-5deg)  scale(1.06); }
+  61%        { transform: translate(0,  38px)  rotate( 5deg)  scale(1.06); }
+  64%        { transform: translate(-35px,-20px) rotate(-10deg) scale(1.08); }
+  67%        { transform: translate( 35px, 20px) rotate( 10deg) scale(1.08); }
+  70%        { transform: translate(0, -30px)  rotate(-6deg)  scale(1.1);  }
+  73%        { transform: translate(0,  30px)  rotate( 6deg)  scale(0.92); }
+  76%        { transform: translate(-20px, 0)  rotate(-4deg)  scale(1.05); }
+  79%        { transform: translate( 20px, 0)  rotate( 4deg)  scale(1.05); }
+  82%        { transform: translate(0, 0)      rotate(0deg)   scale(1.12); }
+  86%        { transform: translate(0, 0)      rotate(0deg)   scale(0.94); }
+  90%        { transform: translate(0, 0)      rotate(0deg)   scale(1.03); }
+  100%       { transform: translate(0, 0)      rotate(0deg)   scale(1);    }
+}
+.fish-bump { animation: fishBump 3s cubic-bezier(0.36,0.07,0.19,0.97) infinite; }
+
+/* ─── Fish: crazy hover vibration ───────────── */
+@keyframes vibrate-crazy {
+  0%   { transform: translate(0,0)       rotate(0deg)    scale(1);    }
+  7%   { transform: translate(-8px,-5px) rotate(-4deg)   scale(1.05); }
+  14%  { transform: translate( 8px, 6px) rotate( 4deg)   scale(0.95); }
+  21%  { transform: translate(-7px, 8px) rotate(-3.5deg) scale(1.06); }
+  28%  { transform: translate( 9px,-7px) rotate( 4.5deg) scale(0.94); }
+  35%  { transform: translate(-9px, 5px) rotate(-4deg)   scale(1.06); }
+  42%  { transform: translate( 7px,-8px) rotate( 3.5deg) scale(0.95); }
+  49%  { transform: translate(-6px, 7px) rotate(-4.5deg) scale(1.05); }
+  56%  { transform: translate( 8px, 6px) rotate( 4deg)   scale(0.96); }
+  63%  { transform: translate(-7px,-6px) rotate(-3.5deg) scale(1.05); }
+  70%  { transform: translate( 6px, 7px) rotate( 3deg)   scale(0.96); }
+  84%  { transform: translate(-4px,-3px) rotate(-2deg)   scale(1.02); }
+  100% { transform: translate(0,0)       rotate(0deg)    scale(1);    }
+}
+
+/* ─── Fish: click pop ────────────────────────── */
+@keyframes fish-click {
+  0%   { transform: scale(1)    rotate(0deg);   }
+  18%  { transform: scale(1.4)  rotate(-18deg); }
+  36%  { transform: scale(0.8)  rotate( 12deg); }
+  54%  { transform: scale(1.25) rotate(-8deg);  }
+  72%  { transform: scale(0.92) rotate( 4deg);  }
+  100% { transform: scale(1)    rotate(0deg);   }
+}
+
+.fish-interactive {
+  cursor: pointer;
+}
+.fish-interactive:hover {
+  animation: vibrate-crazy 0.07s linear infinite !important;
+  filter: drop-shadow(0 0 40px rgba(240,191,34,0.8)) drop-shadow(0 0 80px rgba(240,191,34,0.4)) !important;
+}
+.fish-interactive:active {
+  animation: fish-click 0.45s cubic-bezier(0.36,0.07,0.19,0.97) forwards !important;
+}
+
+/* ─── Vibration / jitter ─────────────────────── */
+@keyframes vibrate {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  2%   { transform: translate(-5px, -3px) rotate(-1.2deg); }
+  4%   { transform: translate( 5px,  4px) rotate( 1.4deg); }
+  6%   { transform: translate(-4px,  5px) rotate(-1.1deg); }
+  8%   { transform: translate( 6px, -4px) rotate( 1.5deg); }
+  10%  { transform: translate(-5px,  3px) rotate(-1.3deg); }
+  12%  { transform: translate( 4px, -5px) rotate( 1.2deg); }
+  14%  { transform: translate(-6px,  4px) rotate(-1.4deg); }
+  16%  { transform: translate( 5px,  3px) rotate( 1.1deg); }
+  18%  { transform: translate(-3px, -5px) rotate(-1.2deg); }
+  20%  { transform: translate( 5px,  2px) rotate( 1.3deg); }
+  22%  { transform: translate(-4px,  4px) rotate(-1deg); }
+  24%  { transform: translate( 3px, -3px) rotate( 0.8deg); }
+  26%  { transform: translate(-2px,  2px) rotate(-0.5deg); }
+  28%  { transform: translate( 1px, -1px) rotate( 0.3deg); }
+  30%, 100% { transform: translate(0, 0) rotate(0deg); }
+}
+.vibrate { animation: vibrate 2s linear infinite; }
 
 /* ─── Navbar link hover underline ───────────── */
 .nav-link {
