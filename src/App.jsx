@@ -68,12 +68,12 @@ function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="#" aria-label="Telegram"
+          {/* <a href="#" aria-label="Telegram"
             className="flex items-center justify-center transition-opacity hover:opacity-100"
             style={{ width: 32, height: 32, opacity: 0.45 }}
           >
             <img src="/telegram.svg" alt="Telegram" width={20} height={20} />
-          </a>
+          </a> */}
           <a href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
             className="flex items-center justify-center transition-opacity hover:opacity-100"
             style={{ width: 32, height: 32, opacity: 0.45 }}
@@ -704,13 +704,13 @@ function Footer() {
 
         {/* Social icons */}
         <div className="flex items-center justify-center gap-3 mb-7 w-full">
-          <a
+          {/* <a
             href="#" aria-label="Telegram"
             className="w-11 h-11 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100 cursor-pointer"
             style={{ border: '1px solid rgba(255,255,255,0.12)', opacity: 0.4 }}
           >
             <img src="/telegram.svg" alt="Telegram" width={16} height={16} />
-          </a>
+          </a> */}
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             aria-label="X / Twitter"
