@@ -864,8 +864,8 @@ export default function App() {
       <Hero />
       <Lore />
       <Tokenomics />
-      <MemeGallery />
       <Roadmap />
+      <MemeGallery />
       <HowToBuy />
       <Footer />
     </div>
