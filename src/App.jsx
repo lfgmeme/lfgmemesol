@@ -45,13 +45,10 @@ function Navbar() {
         height: 81,
       }}
     >
-      {/* Desktop — 3-col grid for true centering */}
+      {/* Desktop */}
       <div
         className="hidden lg:flex items-center justify-between h-full px-10 lg:px-20"
-        style={{
-          maxWidth: 1440,
-          margin: '0 auto',
-        }}
+        style={{ maxWidth: 1440, margin: '0 auto' }}
       >
         <a href="#hero" className="flex items-center">
           <img src="/Container.svg" alt="LFG" style={{ width: 110, height: 48 }} />
@@ -63,16 +60,7 @@ function Navbar() {
               key={l.label}
               href={l.href}
               className="nav-link uppercase text-white/70 hover:text-[#F0BF22] transition-colors whitespace-nowrap"
-              style={{
-                fontFamily: 'Rajdhani, sans-serif',
-                fontSize: 16,
-                fontWeight: 400,
-                fontStyle: 'normal',
-                lineHeight: '20px',
-                letterSpacing: '0.7px',
-                textAlign: 'center',
-                verticalAlign: 'bottom',
-              }}
+              style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 16, fontWeight: 400, letterSpacing: '0.7px' }}
             >
               {l.label}
             </a>
@@ -94,15 +82,8 @@ function Navbar() {
           </a>
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
-            className="uppercase text-black hover:brightness-110 transition whitespace-nowrap"
-            style={{
-              fontFamily: "'Finger Paint', cursive",
-              fontSize: 14,
-              background: GOLD,
-              borderRadius: 100,
-              padding: '8px 20px',
-              textDecoration: 'none',
-            }}
+            className="uppercase text-black hover:brightness-110 transition whitespace-nowrap cursor-pointer"
+            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, background: GOLD, borderRadius: 100, padding: '8px 20px', textDecoration: 'none' }}
           >
             JOIN THE CULT
           </a>
@@ -110,11 +91,16 @@ function Navbar() {
       </div>
 
       {/* Mobile */}
-      <div className="lg:hidden flex items-center justify-between h-full px-5">
+      <div className="lg:hidden flex items-center justify-between h-full px-[15px]">
         <a href="#hero">
-          <img src="/Container.svg" alt="LFG" style={{ width: 110, height: 48 }} />
+          <img src="/Container.svg" alt="LFG" style={{ width: 100, height: 44 }} />
         </a>
-        <button className="p-1.5 text-white" onClick={() => setOpen(v => !v)} aria-label="Menu">
+        <button
+          className="flex items-center justify-center text-white cursor-pointer"
+          onClick={() => setOpen(v => !v)}
+          aria-label="Menu"
+          style={{ width: 44, height: 44 }}
+        >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             {open
               ? <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
@@ -126,7 +112,7 @@ function Navbar() {
 
       {open && (
         <div
-          className="lg:hidden px-6 pt-3 pb-6 flex flex-col gap-4"
+          className="lg:hidden px-[15px] pt-2 pb-5 flex flex-col gap-1"
           style={{ background: 'rgba(2,5,9,0.97)', borderTop: '1px solid rgba(240,191,34,0.07)' }}
         >
           {NAV_LINKS.map(l => (
@@ -134,17 +120,8 @@ function Navbar() {
               key={l.label}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="uppercase text-white/55 hover:text-[#F0BF22] py-1"
-              style={{
-                fontFamily: 'Rajdhani, sans-serif',
-                fontSize: 16,
-                fontWeight: 400,
-                fontStyle: 'normal',
-                lineHeight: '20px',
-                letterSpacing: '0.7px',
-                textAlign: 'center',
-                verticalAlign: 'bottom',
-              }}
+              className="uppercase text-white/55 hover:text-[#F0BF22] transition-colors cursor-pointer"
+              style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 15, letterSpacing: '0.7px', padding: '10px 0', borderBottom: '1px solid rgba(255,255,255,0.05)' }}
             >
               {l.label}
             </a>
@@ -152,8 +129,8 @@ function Navbar() {
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="uppercase text-black text-center hover:brightness-110 transition"
-            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 13, background: GOLD, borderRadius: 100, padding: '8px 20px', textDecoration: 'none' }}
+            className="uppercase text-black text-center hover:brightness-110 transition cursor-pointer mt-3"
+            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 13, background: GOLD, borderRadius: 100, padding: '11px 20px', textDecoration: 'none' }}
           >
             JOIN THE CULT
           </a>
@@ -175,25 +152,20 @@ function Hero() {
       style={{ paddingTop: 81 }}
     >
       <div
-        className="relative z-10 w-full flex items-center px-5 lg:px-20"
-        style={{
-          maxWidth: 1440,
-          margin: '0 auto',
-          paddingTop: 60,
-          paddingBottom: 60,
-        }}
+        className="relative z-10 w-full flex items-center px-[15px] lg:px-20"
+        style={{ maxWidth: 1440, margin: '0 auto', paddingTop: 48, paddingBottom: 100 }}
       >
-        {/* Left content */}
-        <div className="flex flex-col items-start z-10" style={{ flex: '0 0 auto', maxWidth: 540 }}>
+        {/* Content */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10 w-full lg:w-auto" style={{ flex: '0 0 auto', maxWidth: 540 }}>
           <img
             src="/LFG.svg"
             alt="LFG"
             className="select-none"
             style={{
-              width: 'clamp(280px, 80vw, 440px)',
+              width: 'clamp(240px, 72vw, 440px)',
               maxWidth: '100%',
               filter: `drop-shadow(0 0 40px rgba(240,191,34,0.55)) drop-shadow(0 0 90px rgba(240,191,34,0.2))`,
-              marginBottom: 24,
+              marginBottom: 20,
             }}
             draggable={false}
           />
@@ -201,10 +173,10 @@ function Hero() {
           <p
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 'clamp(28px, 6vw, 36px)',
+              fontSize: 'clamp(22px, 5.5vw, 36px)',
               letterSpacing: '1.8px',
               color: '#fff',
-              marginBottom: 16,
+              marginBottom: 12,
               lineHeight: 1.2,
             }}
           >
@@ -214,63 +186,38 @@ function Hero() {
           <p
             style={{
               fontFamily: 'Rajdhani, sans-serif',
-              fontSize: 'clamp(16px, 4vw, 20px)',
+              fontSize: 'clamp(15px, 3.5vw, 20px)',
               color: 'rgba(255,255,255,0.6)',
-              marginBottom: 36,
+              marginBottom: 32,
               lineHeight: 1.6,
-              maxWidth: 400,
+              maxWidth: 380,
             }}
           >
             This isn't just a coin. It's a movement. Join the cult of eternal moonflights.
           </p>
 
-          <div className="flex flex-wrap items-center gap-3">
+          {/* Buttons — stack on narrow, wrap on wider */}
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 w-full sm:w-auto">
             <a
               href="https://jup.ag/?sell=So11111111111111111111111111111111111111112&buy=Fh5fNaGMHQfencSGj83kyp26RrB3fCoYtYuLvXaRpump"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="uppercase hover:brightness-110 transition"
-              style={{
-                fontFamily: "'Finger Paint', cursive",
-                fontSize: 14,
-                background: GOLD,
-                color: '#000',
-                borderRadius: 100,
-                padding: '10px 24px',
-                textDecoration: 'none',
-              }}
+              target="_blank" rel="noopener noreferrer"
+              className="uppercase hover:brightness-110 transition cursor-pointer w-full sm:w-auto"
+              style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, background: GOLD, color: '#000', borderRadius: 100, padding: '12px 28px', textDecoration: 'none', textAlign: 'center' }}
             >
               BUY NOW
             </a>
             <a
               href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
-              className="uppercase transition"
-              style={{
-                fontFamily: "'Finger Paint', cursive",
-                fontSize: 14,
-                color: GOLD,
-                border: `1.5px solid ${GOLD}`,
-                borderRadius: 100,
-                padding: '10px 24px',
-                textDecoration: 'none',
-              }}
+              className="uppercase transition cursor-pointer w-full sm:w-auto"
+              style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, color: GOLD, border: `1.5px solid ${GOLD}`, borderRadius: 100, padding: '12px 28px', textDecoration: 'none', textAlign: 'center' }}
             >
               JOIN THE CULT
             </a>
             <a
               href="https://dexscreener.com/solana/6paudmcr1otwv16uu7geswwi1fxeoiej2yumzugfu27g"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="uppercase flex items-center gap-2 transition hover:border-white/50"
-              style={{
-                fontFamily: "'Finger Paint', cursive",
-                fontSize: 14,
-                color: '#fff',
-                border: '1.5px solid rgba(255,255,255,0.3)',
-                borderRadius: 100,
-                padding: '10px 20px',
-                textDecoration: 'none',
-              }}
+              target="_blank" rel="noopener noreferrer"
+              className="uppercase flex items-center justify-center gap-2 transition hover:border-white/50 cursor-pointer w-full sm:w-auto"
+              style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, color: '#fff', border: '1.5px solid rgba(255,255,255,0.3)', borderRadius: 100, padding: '12px 24px', textDecoration: 'none' }}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
@@ -281,36 +228,32 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — fish */}
+        {/* Desktop fish */}
         <div className="hidden lg:flex flex-1 justify-end items-center">
           <img
             src="/pppng 2.svg"
             alt="LFG Character"
             className="float hero-char select-none"
-            style={{
-              width: 'clamp(320px, 45vw, 640px)',
-              filter: 'drop-shadow(0 0 60px rgba(240,191,34,0.3))',
-            }}
+            style={{ width: 'clamp(320px, 45vw, 640px)', filter: 'drop-shadow(0 0 60px rgba(240,191,34,0.3))' }}
             draggable={false}
           />
         </div>
       </div>
 
-      {/* Mobile fish */}
+      {/* Mobile fish — larger + more visible */}
       <div
         className="lg:hidden flex justify-center"
-        style={{ position: 'absolute', bottom: 0, left: 0, right: 0, opacity: 0.45, pointerEvents: 'none' }}
+        style={{ position: 'absolute', bottom: 0, left: 0, right: 0, opacity: 0.55, pointerEvents: 'none' }}
       >
         <img
           src="/pppng 2.svg"
           alt=""
-          className="select-none"
-          style={{ width: 260, filter: 'drop-shadow(0 0 30px rgba(240,191,34,0.25))' }}
+          className="select-none float"
+          style={{ width: 'clamp(200px, 55vw, 300px)', filter: 'drop-shadow(0 0 30px rgba(240,191,34,0.3))' }}
           draggable={false}
         />
       </div>
 
-      {/* Bottom gradient transition */}
       <div
         className="absolute inset-x-0 bottom-0 h-28 pointer-events-none"
         style={{ background: 'linear-gradient(to top, #020509, transparent)' }}
@@ -325,22 +268,22 @@ function Hero() {
 function Lore() {
   return (
     <section id="lore" className="relative py-10 lg:py-12">
-      <div className="px-5 lg:px-20" style={{ maxWidth: 1440, margin: '0 auto' }}>
+      <div className="px-[15px] lg:px-20" style={{ maxWidth: 1440, margin: '0 auto' }}>
         <div
-          className="bg-s2 rounded-3xl text-center my-5 mx-2 lg:mx-0"
+          className="bg-s2 rounded-3xl text-center my-5"
           style={{
             border: '1px solid rgba(240,191,34,0.18)',
             backdropFilter: 'blur(10px)',
-            padding: 'clamp(32px, 8vw, 56px) clamp(24px, 5vw, 64px)',
+            padding: 'clamp(28px, 7vw, 56px) clamp(20px, 5vw, 64px)',
           }}
         >
           <h2
             style={{
               fontFamily: "'Finger Paint', cursive",
-              fontSize: 'clamp(40px, 8vw, 60px)',
-              letterSpacing: '-3px',
+              fontSize: 'clamp(34px, 9vw, 60px)',
+              letterSpacing: 'clamp(-1px, -0.04em, -3px)',
               color: '#fff',
-              marginBottom: 28,
+              marginBottom: 24,
               lineHeight: 1,
             }}
           >
@@ -350,12 +293,11 @@ function Lore() {
           <p
             style={{
               fontFamily: 'Rajdhani, sans-serif',
-              fontSize: 18,
+              fontSize: 'clamp(15px, 3.5vw, 18px)',
               color: 'rgba(255,255,255,0.55)',
               lineHeight: 1.95,
-              marginBottom: 28,
               maxWidth: 560,
-              margin: '0 auto 28px',
+              margin: '0 auto 24px',
             }}
           >
             In the drama of the chain, a token was born. Not just any token — this battle cry of degens,
@@ -363,16 +305,10 @@ function Lore() {
             We're here to dominate.
           </p>
 
-          <p
-            style={{
-              fontFamily: "'Finger Paint', cursive",
-              fontSize: 18,
-              color: GOLD,
-            }}
-          >
+          <p style={{ fontFamily: "'Finger Paint', cursive", fontSize: 'clamp(14px, 3.5vw, 18px)', color: GOLD }}>
             Zero promises. Dank vibes. Maximum chaos.
           </p>
-          <img src="/favicon.svg" alt="icon" style={{ width: 32, height: 32, margin: '28px auto 0' }} />
+          <img src="/favicon.svg" alt="icon" style={{ width: 32, height: 32, margin: '24px auto 0' }} />
         </div>
       </div>
     </section>
@@ -390,52 +326,45 @@ function Tokenomics() {
     { value: '100%', label: 'COMMUNITY' },
   ]
   return (
-    <section id="tokenomics" className="bg-s2 relative py-10 lg:py-12 px-5 mb-16 lg:mb-32 overflow-hidden">
-      <div
-        className="absolute inset-x-0 top-0 h-28 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }}
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-28 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #020509, transparent)' }}
-      />
+    <section id="tokenomics" className="bg-s2 relative py-10 lg:py-12 px-[15px] mb-16 lg:mb-32 overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-28 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
+      <div className="absolute inset-x-0 bottom-0 h-28 pointer-events-none" style={{ background: 'linear-gradient(to top, #020509, transparent)' }} />
 
       <div className="relative z-10" style={{ maxWidth: 1280, margin: '20px auto' }}>
         <h2
           className="text-center"
           style={{
             fontFamily: "'Finger Paint', cursive",
-            fontSize: 60,
-            letterSpacing: '-3px',
+            fontSize: 'clamp(28px, 8vw, 60px)',
+            letterSpacing: 'clamp(-1px, -0.04em, -3px)',
             color: '#fff',
             lineHeight: 1,
-            marginBottom: 64,
+            marginBottom: 'clamp(32px, 7vw, 64px)',
           }}
         >
           TOKEN<span style={{ color: GOLD }}>OMICS</span>
         </h2>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {stats.map(s => (
             <div
               key={s.label}
-              className="flex flex-col items-center justify-center text-center"
+              className="flex flex-col items-center justify-center text-center p-5 lg:p-8"
               style={{
                 background: 'rgba(11,16,32,0.2)',
                 border: '1px solid rgba(240,191,34,0.2)',
                 backdropFilter: 'blur(3px)',
                 borderRadius: 16,
-                padding: '32px 24px',
               }}
             >
               <span
                 className="gold-glow"
                 style={{
                   fontFamily: "'Finger Paint', cursive",
-                  fontSize: 'clamp(32px, 6vw, 48px)',
+                  fontSize: 'clamp(28px, 6vw, 48px)',
                   color: GOLD,
                   lineHeight: 1,
-                  marginBottom: 10,
+                  marginBottom: 8,
                   display: 'block',
                 }}
               >
@@ -444,7 +373,7 @@ function Tokenomics() {
               <span
                 style={{
                   fontFamily: 'Rajdhani, sans-serif',
-                  fontSize: 16,
+                  fontSize: 'clamp(12px, 2.5vw, 16px)',
                   color: '#99A1AF',
                   letterSpacing: '0.7px',
                   textTransform: 'uppercase',
@@ -455,7 +384,7 @@ function Tokenomics() {
             </div>
           ))}
         </div>
-        <img src="/favicon.svg" alt="icon" style={{ width: 44, height: 44, margin: '50px auto 0', filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
+        <img src="/favicon.svg" alt="icon" style={{ width: 44, height: 44, margin: '40px auto 0', filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
       </div>
     </section>
   )
@@ -473,33 +402,34 @@ function MemeGallery() {
   const visible = MEME_ICONS.slice(page * perPage, page * perPage + perPage)
 
   return (
-    <section id="gallery" className="py-10 lg:py-12 px-5" style={{ background: '#020509' }}>
+    <section id="gallery" className="py-10 lg:py-12 px-[15px]" style={{ background: '#020509' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <h2
           className="text-center"
           style={{
             fontFamily: "'Finger Paint', cursive",
-            fontSize: 60,
-            letterSpacing: '-3px',
+            fontSize: 'clamp(28px, 8vw, 60px)',
+            letterSpacing: 'clamp(-1px, -0.04em, -3px)',
             color: '#fff',
             lineHeight: 1,
-            marginBottom: 56,
+            marginBottom: 'clamp(28px, 6vw, 56px)',
           }}
         >
           MEME <span style={{ color: GOLD }}>GALLERY</span>
         </h2>
 
-        <div className="flex items-center gap-5 lg:gap-8">
+        <div className="flex items-center gap-3 lg:gap-8">
           <button
             onClick={() => setPage(p => Math.max(0, p - 1))}
             disabled={page === 0}
-            className="flex-shrink-0 text-white/70 hover:text-white disabled:opacity-20 transition select-none"
-            style={{ fontFamily: 'serif', fontSize: 44, lineHeight: 1 }}
+            className="flex-shrink-0 flex items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
+            style={{ width: 44, height: 44, fontSize: 44, lineHeight: 1, fontFamily: 'serif' }}
+            aria-label="Previous"
           >
             ‹
           </button>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-3 lg:gap-4">
             {visible.map((icon, i) => (
               <div
                 key={i}
@@ -508,7 +438,7 @@ function MemeGallery() {
                   background: 'rgba(11,16,32,0.4)',
                   border: '1px solid rgba(255,255,255,0.06)',
                   borderRadius: 16,
-                  overflow: 'hidden'
+                  overflow: 'hidden',
                 }}
               >
                 <img src={`/icons/${icon}`} alt="meme" style={{ width: '80%', height: '80%', objectFit: 'contain' }} />
@@ -519,11 +449,35 @@ function MemeGallery() {
           <button
             onClick={() => setPage(p => Math.min(pages - 1, p + 1))}
             disabled={page >= pages - 1}
-            className="flex-shrink-0 text-white/70 hover:text-white disabled:opacity-20 transition select-none"
-            style={{ fontFamily: 'serif', fontSize: 44, lineHeight: 1 }}
+            className="flex-shrink-0 flex items-center justify-center text-white/70 hover:text-white disabled:opacity-20 transition select-none cursor-pointer"
+            style={{ width: 44, height: 44, fontSize: 44, lineHeight: 1, fontFamily: 'serif' }}
+            aria-label="Next"
           >
             ›
           </button>
+        </div>
+
+        {/* Pagination dots */}
+        <div className="flex items-center justify-center gap-1.5 mt-6">
+          {Array.from({ length: Math.min(pages, 10) }).map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setPage(i)}
+              className="transition-all cursor-pointer"
+              style={{
+                width: i === page ? 20 : 6,
+                height: 6,
+                borderRadius: 3,
+                background: i === page ? GOLD : 'rgba(255,255,255,0.2)',
+              }}
+              aria-label={`Page ${i + 1}`}
+            />
+          ))}
+          {pages > 10 && (
+            <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.3)', marginLeft: 4 }}>
+              {page + 1}/{pages}
+            </span>
+          )}
         </div>
       </div>
     </section>
@@ -535,57 +489,50 @@ function MemeGallery() {
 // ─────────────────────────────────────────────────────────
 function Roadmap() {
   return (
-    <section id="roadmap" className="bg-s3 relative py-10 lg:py-12 px-5 mt-10 lg:mt-20 overflow-hidden">
-      <div
-        className="absolute inset-x-0 top-0 h-24 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }}
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-24 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, #020509, transparent)' }}
-      />
+    <section id="roadmap" className="bg-s3 relative py-10 lg:py-12 px-[15px] mt-10 lg:mt-20 overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
+      <div className="absolute inset-x-0 bottom-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to top, #020509, transparent)' }} />
 
       <div className="relative z-10" style={{ maxWidth: 1280, margin: '0 auto' }}>
         <h2
           className="text-center"
           style={{
             fontFamily: "'Finger Paint', cursive",
-            fontSize: 60,
-            letterSpacing: '-3px',
+            fontSize: 'clamp(28px, 8vw, 60px)',
+            letterSpacing: 'clamp(-1px, -0.04em, -3px)',
             color: '#fff',
             lineHeight: 1,
-            marginBottom: 64,
+            marginBottom: 'clamp(32px, 7vw, 64px)',
           }}
         >
           ROAD<span style={{ color: GOLD }}>MAP</span>
         </h2>
 
-        <div className="flex flex-col sm:flex-row items-center sm:items-stretch justify-center gap-4 flex-wrap">
+        {/* 2-col on mobile, 5-col on lg */}
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
           {ROADMAP.map((phase, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center text-center"
+              className="flex flex-col items-center justify-center text-center p-5 lg:p-6"
               style={{
-                width: 218,
-                minHeight: 154,
+                minHeight: 140,
                 background: 'rgba(11,16,32,0.2)',
                 border: `1px solid rgba(240,191,34,${phase.done || phase.active ? '0.4' : '0.15'})`,
                 backdropFilter: 'blur(3px)',
                 borderRadius: 16,
-                padding: '24px 20px',
                 opacity: phase.done || phase.active ? 1 : 0.55,
               }}
             >
-              <img src="/favicon.svg" alt="icon" style={{ width: 48, height: 48, marginBottom: 16, filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
+              <img src="/favicon.svg" alt="icon" style={{ width: 40, height: 40, marginBottom: 12, filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
               <p
                 style={{
                   fontFamily: 'Rajdhani, sans-serif',
-                  fontSize: 14,
+                  fontSize: 12,
                   fontWeight: 700,
                   color: GOLD,
                   letterSpacing: '0.7px',
                   textTransform: 'uppercase',
-                  marginBottom: 10,
+                  marginBottom: 8,
                 }}
               >
                 {phase.phase}
@@ -593,7 +540,7 @@ function Roadmap() {
               <p
                 style={{
                   fontFamily: "'Finger Paint', cursive",
-                  fontSize: 24,
+                  fontSize: 'clamp(14px, 3vw, 22px)',
                   color: phase.done || phase.active ? '#fff' : 'rgba(255,255,255,0.5)',
                   lineHeight: 1.2,
                 }}
@@ -613,84 +560,54 @@ function Roadmap() {
 // ─────────────────────────────────────────────────────────
 function HowToBuy() {
   const steps = [
-    {
-      num: '01',
-      title: 'GET WALLET',
-      desc: 'Download Phantom Wallet or PumpFun App from official sites.',
-    },
-    {
-      num: '02',
-      title: 'GET SOL',
-      desc: 'Buy SOL on an exchange and transfer to your wallet or app.',
-    },
-    {
-      num: '03',
-      title: 'SWAP FOR LFG',
-      desc: 'Go to Jupiter, swap inside Phantom, or use PumpFun App to buy. Paste CA, swap SOL for $LFG.',
-    },
+    { num: '01', title: 'GET WALLET', desc: 'Download Phantom Wallet or PumpFun App from official sites.' },
+    { num: '02', title: 'GET SOL', desc: 'Buy SOL on an exchange and transfer to your wallet or app.' },
+    { num: '03', title: 'SWAP FOR LFG', desc: 'Go to Jupiter, swap inside Phantom, or use PumpFun App to buy. Paste CA, swap SOL for $LFG.' },
   ]
   return (
-    <section id="howtobuy" className="relative py-10 lg:py-12 px-5" style={{ background: '#020509' }}>
+    <section id="howtobuy" className="relative py-10 lg:py-12 px-[15px]" style={{ background: '#020509' }}>
       <div className="relative z-10" style={{ maxWidth: 1200, margin: '0 auto' }}>
         <h2
           className="text-center"
           style={{
             fontFamily: "'Finger Paint', cursive",
-            fontSize: 60,
-            letterSpacing: '-3px',
+            fontSize: 'clamp(28px, 8vw, 60px)',
+            letterSpacing: 'clamp(-1px, -0.04em, -3px)',
             color: '#fff',
             lineHeight: 1,
-            marginBottom: 56,
+            marginBottom: 'clamp(28px, 6vw, 56px)',
           }}
         >
           HOW TO <span style={{ color: GOLD }}>BUY</span>
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-3 gap-4 lg:gap-8">
           {steps.map(s => (
             <div
               key={s.num}
-              className="flex flex-col"
+              className="flex flex-col p-5 lg:p-9"
               style={{
                 background: '#0B1020',
                 border: '1px solid rgba(255,255,255,0.07)',
                 borderRadius: 16,
-                padding: '36px 32px',
               }}
             >
-              <div className="flex items-center gap-4 mb-4">
-                <img src="/favicon.svg" alt="icon" style={{ width: 44, height: 44, filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
+              <div className="flex items-center gap-3 mb-4">
+                <img src="/favicon.svg" alt="icon" style={{ width: 40, height: 40, filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
                 <span
                   className="gold-glow"
-                  style={{
-                    fontFamily: "'Finger Paint', cursive",
-                    fontSize: 52,
-                    color: GOLD,
-                    lineHeight: 1,
-                    display: 'block',
-                  }}
+                  style={{ fontFamily: "'Finger Paint', cursive", fontSize: 'clamp(36px, 8vw, 52px)', color: GOLD, lineHeight: 1, display: 'block' }}
                 >
                   {s.num}
                 </span>
               </div>
               <h3
-                style={{
-                  fontFamily: "'Bebas Neue', sans-serif",
-                  fontSize: 24,
-                  color: '#fff',
-                  letterSpacing: '1px',
-                  marginBottom: 12,
-                }}
+                style={{ fontFamily: "'Bebas Neue', sans-serif", fontSize: 22, color: '#fff', letterSpacing: '1px', marginBottom: 10 }}
               >
                 {s.title}
               </h3>
               <p
-                style={{
-                  fontFamily: 'Rajdhani, sans-serif',
-                  fontSize: 16,
-                  color: '#99A1AF',
-                  lineHeight: 1.6,
-                }}
+                style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 15, color: '#99A1AF', lineHeight: 1.6 }}
               >
                 {s.desc}
               </p>
@@ -708,125 +625,89 @@ function HowToBuy() {
 function Footer() {
   const [copied, copy] = useCopy(CA)
   return (
-    <footer id="footer" className="bg-s3 relative py-10 lg:py-12 px-5 overflow-hidden">
-      <div
-        className="absolute inset-x-0 top-0 h-24 pointer-events-none"
-        style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }}
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
-        style={{ background: 'linear-gradient(to top, rgba(2,5,9,0.9), transparent)' }}
-      />
+    <footer id="footer" className="bg-s3 relative py-10 lg:py-12 px-[15px] overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-24 pointer-events-none" style={{ background: 'linear-gradient(to bottom, #020509, transparent)' }} />
+      <div className="absolute inset-x-0 bottom-0 h-20 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(2,5,9,0.9), transparent)' }} />
 
       <div className="relative z-10 flex flex-col items-center text-center" style={{ maxWidth: 640, margin: '0 auto' }}>
-        {/* Big LFG text & Logo */}
-        <div className="flex items-center justify-center gap-5 mb-8 w-full">
+        {/* LFG text + logo */}
+        <div className="flex items-center justify-center gap-4 mb-7 w-full">
           <p
             className="gold-glow"
-            style={{
-              fontFamily: "'Finger Paint', cursive",
-              fontSize: 'clamp(48px, 12vw, 64px)',
-              color: GOLD,
-              lineHeight: 1,
-            }}
+            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 'clamp(44px, 12vw, 64px)', color: GOLD, lineHeight: 1 }}
           >
             LFG
           </p>
-          <img src="/favicon.svg" alt="LFG" style={{ width: 64, height: 64, filter: 'drop-shadow(0 0 15px rgba(240,191,34,0.4))' }} />
+          <img src="/favicon.svg" alt="LFG" style={{ width: 56, height: 56, filter: 'drop-shadow(0 0 15px rgba(240,191,34,0.4))' }} />
         </div>
 
         {/* CA pill */}
         <button
           onClick={copy}
-          className="flex items-center gap-2 mx-auto mb-6 transition hover:opacity-80 active:scale-[0.98]"
+          className="flex items-center gap-2 mx-auto mb-6 transition hover:opacity-80 active:scale-[0.98] cursor-pointer w-full"
           style={{
             background: '#0B1020',
             borderRadius: 100,
-            padding: '12px 24px',
-            color: 'rgba(255,255,255,0.6)',
-            border: '1px solid rgba(255,255,255,0.08)'
+            padding: '11px 16px',
+            border: '1px solid rgba(255,255,255,0.08)',
+            maxWidth: 420,
           }}
         >
-          <span
-            style={{
-              fontFamily: 'Rajdhani, sans-serif',
-              fontSize: 14,
-              color: 'rgba(255,255,255,0.35)',
-              marginRight: 4,
-            }}
-          >
+          <span style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 13, color: 'rgba(255,255,255,0.35)', flexShrink: 0 }}>
             CA:
           </span>
           <span
             style={{
-              fontFamily: 'Inter, sans-serif',
-              fontSize: 14,
-              maxWidth: 400,
+              fontFamily: 'Inter, monospace',
+              fontSize: 13,
+              color: 'rgba(255,255,255,0.6)',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
+              flex: '1 1 0',
+              minWidth: 0,
             }}
           >
             {CA}
           </span>
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="flex-shrink-0 ml-1"
-          >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="flex-shrink-0">
             <rect x="9" y="9" width="13" height="13" rx="2" />
             <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
-          {copied && <span style={{ color: GOLD, fontSize: 12, marginLeft: 4 }}>Copied!</span>}
+          {copied && <span style={{ color: GOLD, fontSize: 12, flexShrink: 0 }}>Copied!</span>}
         </button>
 
         {/* Disclaimer */}
         <p
           style={{
             fontFamily: 'Rajdhani, sans-serif',
-            fontSize: 16,
+            fontSize: 'clamp(14px, 3.5vw, 16px)',
             color: '#fff',
             lineHeight: 1.7,
-            marginBottom: 32,
             maxWidth: 480,
-            margin: '0 auto 32px',
+            margin: '0 auto 28px',
           }}
         >
           $LFG is a meme coin with no intrinsic value or financial return expectation.
           There is no formal team or roadmap for $LFG. The coin is for entertainment purposes only.
         </p>
 
-        {/* JOIN THE CULT button */}
-        <div className="flex justify-center mb-8 w-full">
+        {/* JOIN THE CULT */}
+        <div className="flex justify-center mb-7 w-full">
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
-            className="uppercase text-black hover:brightness-110 transition whitespace-nowrap"
-            style={{
-              fontFamily: "'Finger Paint', cursive",
-              fontSize: 14,
-              background: GOLD,
-              borderRadius: 100,
-              padding: '12px 28px',
-              textDecoration: 'none',
-              display: 'inline-block'
-            }}
+            className="uppercase text-black hover:brightness-110 transition whitespace-nowrap cursor-pointer"
+            style={{ fontFamily: "'Finger Paint', cursive", fontSize: 14, background: GOLD, borderRadius: 100, padding: '12px 28px', textDecoration: 'none', display: 'inline-block' }}
           >
             JOIN THE CULT
           </a>
         </div>
 
         {/* Social icons */}
-        <div className="flex items-center justify-center gap-3 mb-8 w-full">
+        <div className="flex items-center justify-center gap-3 mb-7 w-full">
           <a
-            href="#"
-            aria-label="Telegram"
-            className="w-10 h-10 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100"
+            href="#" aria-label="Telegram"
+            className="w-11 h-11 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100 cursor-pointer"
             style={{ border: '1px solid rgba(255,255,255,0.12)', opacity: 0.4 }}
           >
             <img src="/telegram.svg" alt="Telegram" width={16} height={16} />
@@ -834,7 +715,7 @@ function Footer() {
           <a
             href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             aria-label="X / Twitter"
-            className="w-10 h-10 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100"
+            className="w-11 h-11 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100 cursor-pointer"
             style={{ border: '1px solid rgba(255,255,255,0.12)', opacity: 0.4 }}
           >
             <img src="/x.svg" alt="X / Twitter" width={14} height={14} />
@@ -842,13 +723,7 @@ function Footer() {
         </div>
 
         {/* Copyright */}
-        <p
-          style={{
-            fontFamily: 'Rajdhani, sans-serif',
-            fontSize: 14,
-            color: 'rgba(255,255,255,0.2)',
-          }}
-        >
+        <p style={{ fontFamily: 'Rajdhani, sans-serif', fontSize: 14, color: 'rgba(255,255,255,0.2)' }}>
           © 2026 LFG. Built by the cult, for the cult.
         </p>
       </div>
