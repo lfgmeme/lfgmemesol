@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './index.css'
 
 const GOLD = '#F0BF22'
@@ -35,6 +35,12 @@ const NAV_LINKS = [
 // ─────────────────────────────────────────────────────────
 function Navbar() {
   const [open, setOpen] = useState(false)
+
+  useEffect(() => {
+    const img = new window.Image()
+    img.src = '/1%201.svg'
+  }, [])
+
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
