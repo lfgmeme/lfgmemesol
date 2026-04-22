@@ -516,19 +516,18 @@ function Roadmap() {
               style={{
                 minHeight: 140,
                 background: 'rgba(11,16,32,0.2)',
-                border: `1px solid rgba(240,191,34,${phase.done || phase.active ? '0.4' : '0.15'})`,
+                border: '1px solid rgba(255,255,255,0.35)',
                 backdropFilter: 'blur(3px)',
                 borderRadius: 16,
-                opacity: phase.done || phase.active ? 1 : 0.55,
               }}
             >
-              <img src="/favicon.svg" alt="icon" style={{ width: 40, height: 40, marginBottom: 12, filter: 'drop-shadow(0 0 10px rgba(240,191,34,0.3))' }} />
+              <img src="/favicon.svg" alt="icon" style={{ width: 40, height: 40, marginBottom: 12, filter: 'drop-shadow(0 0 10px rgba(255,255,255,0.25))' }} />
               <p
                 style={{
                   fontFamily: 'Rajdhani, sans-serif',
                   fontSize: 12,
                   fontWeight: 700,
-                  color: GOLD,
+                  color: '#fff',
                   letterSpacing: '0.7px',
                   textTransform: 'uppercase',
                   marginBottom: 8,
@@ -540,7 +539,7 @@ function Roadmap() {
                 style={{
                   fontFamily: "'Finger Paint', cursive",
                   fontSize: 'clamp(14px, 3vw, 22px)',
-                  color: phase.done || phase.active ? '#fff' : 'rgba(255,255,255,0.5)',
+                  color: '#fff',
                   lineHeight: 1.2,
                 }}
               >
