@@ -175,7 +175,7 @@ function Hero() {
       style={{ paddingTop: 81 }}
     >
       <div
-        className="relative z-10 w-full flex items-center px-10 lg:px-20"
+        className="relative z-10 w-full flex items-center px-5 lg:px-20"
         style={{
           maxWidth: 1440,
           margin: '0 auto',
@@ -190,7 +190,7 @@ function Hero() {
             alt="LFG"
             className="select-none"
             style={{
-              width: 440,
+              width: 'clamp(280px, 80vw, 440px)',
               maxWidth: '100%',
               filter: `drop-shadow(0 0 40px rgba(240,191,34,0.55)) drop-shadow(0 0 90px rgba(240,191,34,0.2))`,
               marginBottom: 24,
@@ -201,7 +201,7 @@ function Hero() {
           <p
             style={{
               fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: 36,
+              fontSize: 'clamp(28px, 6vw, 36px)',
               letterSpacing: '1.8px',
               color: '#fff',
               marginBottom: 16,
@@ -214,7 +214,7 @@ function Hero() {
           <p
             style={{
               fontFamily: 'Rajdhani, sans-serif',
-              fontSize: 20,
+              fontSize: 'clamp(16px, 4vw, 20px)',
               color: 'rgba(255,255,255,0.6)',
               marginBottom: 36,
               lineHeight: 1.6,
@@ -325,19 +325,19 @@ function Hero() {
 function Lore() {
   return (
     <section id="lore" className="relative py-10 lg:py-12">
-      <div className="px-10 lg:px-20" style={{ maxWidth: 1440, margin: '0 auto' }}>
+      <div className="px-5 lg:px-20" style={{ maxWidth: 1440, margin: '0 auto' }}>
         <div
-          className="bg-s2 rounded-3xl text-center my-5"
+          className="bg-s2 rounded-3xl text-center my-5 mx-2 lg:mx-0"
           style={{
             border: '1px solid rgba(240,191,34,0.18)',
             backdropFilter: 'blur(10px)',
-            padding: '56px 64px',
+            padding: 'clamp(32px, 8vw, 56px) clamp(24px, 5vw, 64px)',
           }}
         >
           <h2
             style={{
               fontFamily: "'Finger Paint', cursive",
-              fontSize: 60,
+              fontSize: 'clamp(40px, 8vw, 60px)',
               letterSpacing: '-3px',
               color: '#fff',
               marginBottom: 28,
@@ -432,7 +432,7 @@ function Tokenomics() {
                 className="gold-glow"
                 style={{
                   fontFamily: "'Finger Paint', cursive",
-                  fontSize: 48,
+                  fontSize: 'clamp(32px, 6vw, 48px)',
                   color: GOLD,
                   lineHeight: 1,
                   marginBottom: 10,
@@ -725,7 +725,7 @@ function Footer() {
             className="gold-glow"
             style={{
               fontFamily: "'Finger Paint', cursive",
-              fontSize: 64,
+              fontSize: 'clamp(48px, 12vw, 64px)',
               color: GOLD,
               lineHeight: 1,
             }}
