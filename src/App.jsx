@@ -2,13 +2,13 @@ import { useState } from 'react'
 import './index.css'
 
 const GOLD = '#F0BF22'
-const CA   = 'FkH9pdeNMGdes2DQBuEy2DWf9FCEP74YMxNe9pump'
+const CA = 'Fh5fNaGMHQfencSGj83kyp26RrB3fCoYtYuLvXaRpump'
 
 const ROADMAP = [
-  { phase: 'PHASE 1', name: 'WAKE UP',      done: true  },
-  { phase: 'PHASE 2', name: 'BAGWORK',      done: true  },
-  { phase: 'PHASE 3', name: 'GET LOUD',     done: false, active: true },
-  { phase: 'PHASE 4', name: 'TAKE OVER',    done: false, active: true },
+  { phase: 'PHASE 1', name: 'WAKE UP', done: true },
+  { phase: 'PHASE 2', name: 'BAGWORK', done: true },
+  { phase: 'PHASE 3', name: 'GET LOUD', done: false, active: true },
+  { phase: 'PHASE 4', name: 'TAKE OVER', done: false, active: true },
   { phase: 'PHASE 5', name: 'ETERNAL MOON', done: false, active: true },
 ]
 
@@ -23,11 +23,11 @@ function useCopy(text, ms = 2000) {
 }
 
 const NAV_LINKS = [
-  { label: 'THE LORE',     href: '#lore'       },
-  { label: 'TOKENOMICS',   href: '#tokenomics'  },
-  { label: 'ROADMAP',      href: '#roadmap'     },
-  { label: 'MEME GALLERY', href: '#gallery'     },
-  { label: 'HOW TO BUY',   href: '#howtobuy'    },
+  { label: 'THE LORE', href: '#lore' },
+  { label: 'TOKENOMICS', href: '#tokenomics' },
+  { label: 'ROADMAP', href: '#roadmap' },
+  { label: 'MEME GALLERY', href: '#gallery' },
+  { label: 'HOW TO BUY', href: '#howtobuy' },
 ]
 
 // ─────────────────────────────────────────────────────────
@@ -86,14 +86,14 @@ function Navbar() {
           >
             <img src="/telegram.svg" alt="Telegram" width={20} height={20} />
           </a>
-          <a href="#" aria-label="X / Twitter"
+          <a href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter"
             className="flex items-center justify-center transition-opacity hover:opacity-100"
             style={{ width: 32, height: 32, opacity: 0.45 }}
           >
             <img src="/x.svg" alt="X / Twitter" width={20} height={20} />
           </a>
           <a
-            href="#howtobuy"
+            href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             className="uppercase text-black hover:brightness-110 transition whitespace-nowrap"
             style={{
               fontFamily: "'Finger Paint', cursive",
@@ -117,8 +117,8 @@ function Navbar() {
         <button className="p-1.5 text-white" onClick={() => setOpen(v => !v)} aria-label="Menu">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             {open
-              ? <><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></>
-              : <><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></>
+              ? <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
+              : <><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></>
             }
           </svg>
         </button>
@@ -150,7 +150,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="#howtobuy"
+            href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             onClick={() => setOpen(false)}
             className="uppercase text-black text-center hover:brightness-110 transition"
             style={{ fontFamily: "'Finger Paint', cursive", fontSize: 13, background: GOLD, borderRadius: 100, padding: '8px 20px', textDecoration: 'none' }}
@@ -226,7 +226,9 @@ function Hero() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href="#howtobuy"
+              href="https://jup.ag/?sell=So11111111111111111111111111111111111111112&buy=Fh5fNaGMHQfencSGj83kyp26RrB3fCoYtYuLvXaRpump"
+              target="_blank"
+              rel="noopener noreferrer"
               className="uppercase hover:brightness-110 transition"
               style={{
                 fontFamily: "'Finger Paint', cursive",
@@ -241,7 +243,7 @@ function Hero() {
               BUY NOW
             </a>
             <a
-              href="#footer"
+              href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
               className="uppercase transition"
               style={{
                 fontFamily: "'Finger Paint', cursive",
@@ -256,7 +258,7 @@ function Hero() {
               JOIN THE CULT
             </a>
             <a
-              href="https://dexscreener.com"
+              href="https://dexscreener.com/solana/6paudmcr1otwv16uu7geswwi1fxeoiej2yumzugfu27g"
               target="_blank"
               rel="noopener noreferrer"
               className="uppercase flex items-center gap-2 transition hover:border-white/50"
@@ -271,8 +273,8 @@ function Hero() {
               }}
             >
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
-                <polyline points="16 7 22 7 22 13"/>
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
               </svg>
               VIEW CHART
             </a>
@@ -382,10 +384,10 @@ function Lore() {
 // ─────────────────────────────────────────────────────────
 function Tokenomics() {
   const stats = [
-    { value: '1B',    label: 'TOTAL SUPPLY' },
-    { value: '100%',  label: 'LP BURNT'     },
-    { value: '0%',    label: 'TAXES'        },
-    { value: '100%',  label: 'COMMUNITY'    },
+    { value: '1B', label: 'TOTAL SUPPLY' },
+    { value: '100%', label: 'LP BURNT' },
+    { value: '0%', label: 'TAXES' },
+    { value: '100%', label: 'COMMUNITY' },
   ]
   return (
     <section id="tokenomics" className="bg-s2 relative py-10 lg:py-12 px-5 mb-16 lg:mb-32 overflow-hidden">
@@ -462,12 +464,12 @@ function Tokenomics() {
 // ─────────────────────────────────────────────────────────
 // 5. Meme Gallery
 // ─────────────────────────────────────────────────────────
-const MEME_ICONS = ["3d-flip-thick.gif","3d-flip.gif","aflame.gif","alarm.gif","alarms.gif","alert.gif","anime-speed.gif","banana-dance.gif","beers.gif","blankies.gif","blaze.gif","blink.gif","bobble.gif","boing.gif","bonk-doge.gif","bonk.gif","boom.gif","bounce.gif","box.gif","breaking-news.gif","breathe.gif","bubble.gif","bulge.gif","burn.gif","butterfly.gif","cat-slap.gif","clone-army.gif","combust.gif","cube.gif","cute-hop.gif","ddr.gif","deal-with-it.gif","depth-tilt.gif","double-roll.gif","drift.gif","drop-bounce.gif","drop.gif","earthquake.gif","elastic-corner-pinch.gif","elastic.gif","electricity.gif","excited.gif","excuse-me.gif","explode.gif","figure-8.gif","fire-frame.gif","fire-pixel.gif","fireplace.gif","fireworks.gif","flag-wave.gif","flame.gif","flick.gif","fling.gif","flip.gif","flutter.gif","fps.gif","gigachad.gif","gitchroll.gif","glitch-out.gif","glitch.gif","glitching.gif","glitchwave.gif","glitchy.gif","gravity-flip.gif","grayscale.gif","gulp.gif","headbop.gif","heart-hypno.gif","heart-locket.gif","heartbeat-flash.gif","heartbeat.gif","heat-haze.gif","hologram.gif","hop.gif","hovering.gif","hype-jam.gif","hype-shake.gif","hype.gif","hyperspace.gif","hypnotize.gif","intensifies.gif","jail.gif","jam.gif","jammies.gif","jiggle.gif","jitter.gif","ken-burns.gif","laser-eyes.gif","lean.gif","leap.gif","lick.gif","lightning-flash.gif","lightning.gif","loading-eight.gif","loading-five.gif","loading-four.gif","loading-nine.gif","loading-seven.gif","loading-six.gif","loading-three.gif","loading-two.gif","loading.gif","lurk.gif","magnet.gif","math.gif","matrix-rain.gif","mc-fire.gif","mega-bounce.gif","melt.gif","misalign.gif","mitosis.gif","music.gif","negative-blink.gif","nod.gif","nodders.gif","nyan-cat.gif","old-man-yells.gif","on-fire.gif","orbit-drift.gif","orbit-eight.gif","orbit-five.gif","orbit-four.gif","orbit-nine.gif","orbit-seven.gif","orbit-six.gif","orbit-three.gif","orbit-two.gif","orbit.gif","origami-fold.gif","pace.gif","panic.gif","party-blob.gif","party-parrot.gif","party.gif","peace-out.gif","peek-corner.gif","pet.gif","phase.gif","pixelate.gif","polar-bear.gif","polish.gif","pop-through.gif","pop.gif","portal-peek.gif","portal-warp.gif","posterize-breath.gif","pounce.gif","prance.gif","pulse.gif","pyramid.gif","quiver.gif","radar-ping.gif","rain.gif","rave-lights.gif","rave.gif","recoil-pop.gif","rgb-split.gif","ripple.gif","roast.gif","roll.gif","rotate-180.gif","rotate-45.gif","rotate-90.gif","rubber-stamp.gif","rubber.gif","runway-landing.gif","runway-takeoff.gif","scanline.gif","scanning.gif","scared.gif","scroll.gif","shake.gif","shimmer.gif","shudder.gif","shy-peek.gif","sideeye-slide.gif","sign.gif","skibidi.gif","skid-stop.gif","slap.gif","slice.gif","slide-bounce.gif","slide-spin.gif","slide.gif","snap.gif","solarize-wave.gif","sparkle-color.gif","sparkle-party.gif","sparkle-rainbow.gif","sparkle.gif","sphere.gif","spin.gif","spiral-in.gif","spiral-zoom.gif","spotlight.gif","squad.gif","squeeze.gif","stomp.gif","stretch.gif","strobe-soft.gif","sway.gif","sweep.gif","swirl.gif","teleport.gif","thanos-snap.gif","tidal-wave.gif","tilt-nod.gif","tilt-zoom.gif","tilt.gif","toilet-bounce.gif","toilet-spin-thick.gif","toilet-spin.gif","tornado.gif","touch-grass.gif","treasure-chest.gif","triggered.gif","tsunami.gif","tumble.gif","twirl.gif","underwater.gif","washing-machine.gif","wave-ocean.gif","wave.gif","weird.gif","wiggle-shear.gif","wildfire.gif","will-slap.gif","wipe.gif","wobble-scale.gif","wobble.gif","wormhole.gif","zoom-close.gif","zoom-in.gif","zoom.gif"];
+const MEME_ICONS = ["3d-flip-thick.gif", "3d-flip.gif", "aflame.gif", "alarm.gif", "alarms.gif", "alert.gif", "anime-speed.gif", "banana-dance.gif", "beers.gif", "blankies.gif", "blaze.gif", "blink.gif", "bobble.gif", "boing.gif", "bonk-doge.gif", "bonk.gif", "boom.gif", "bounce.gif", "box.gif", "breaking-news.gif", "breathe.gif", "bubble.gif", "bulge.gif", "burn.gif", "butterfly.gif", "cat-slap.gif", "clone-army.gif", "combust.gif", "cube.gif", "cute-hop.gif", "ddr.gif", "deal-with-it.gif", "depth-tilt.gif", "double-roll.gif", "drift.gif", "drop-bounce.gif", "drop.gif", "earthquake.gif", "elastic-corner-pinch.gif", "elastic.gif", "electricity.gif", "excited.gif", "excuse-me.gif", "explode.gif", "figure-8.gif", "fire-frame.gif", "fire-pixel.gif", "fireplace.gif", "fireworks.gif", "flag-wave.gif", "flame.gif", "flick.gif", "fling.gif", "flip.gif", "flutter.gif", "fps.gif", "gigachad.gif", "gitchroll.gif", "glitch-out.gif", "glitch.gif", "glitching.gif", "glitchwave.gif", "glitchy.gif", "gravity-flip.gif", "grayscale.gif", "gulp.gif", "headbop.gif", "heart-hypno.gif", "heart-locket.gif", "heartbeat-flash.gif", "heartbeat.gif", "heat-haze.gif", "hologram.gif", "hop.gif", "hovering.gif", "hype-jam.gif", "hype-shake.gif", "hype.gif", "hyperspace.gif", "hypnotize.gif", "intensifies.gif", "jail.gif", "jam.gif", "jammies.gif", "jiggle.gif", "jitter.gif", "ken-burns.gif", "laser-eyes.gif", "lean.gif", "leap.gif", "lick.gif", "lightning-flash.gif", "lightning.gif", "loading-eight.gif", "loading-five.gif", "loading-four.gif", "loading-nine.gif", "loading-seven.gif", "loading-six.gif", "loading-three.gif", "loading-two.gif", "loading.gif", "lurk.gif", "magnet.gif", "math.gif", "matrix-rain.gif", "mc-fire.gif", "mega-bounce.gif", "melt.gif", "misalign.gif", "mitosis.gif", "music.gif", "negative-blink.gif", "nod.gif", "nodders.gif", "nyan-cat.gif", "old-man-yells.gif", "on-fire.gif", "orbit-drift.gif", "orbit-eight.gif", "orbit-five.gif", "orbit-four.gif", "orbit-nine.gif", "orbit-seven.gif", "orbit-six.gif", "orbit-three.gif", "orbit-two.gif", "orbit.gif", "origami-fold.gif", "pace.gif", "panic.gif", "party-blob.gif", "party-parrot.gif", "party.gif", "peace-out.gif", "peek-corner.gif", "pet.gif", "phase.gif", "pixelate.gif", "polar-bear.gif", "polish.gif", "pop-through.gif", "pop.gif", "portal-peek.gif", "portal-warp.gif", "posterize-breath.gif", "pounce.gif", "prance.gif", "pulse.gif", "pyramid.gif", "quiver.gif", "radar-ping.gif", "rain.gif", "rave-lights.gif", "rave.gif", "recoil-pop.gif", "rgb-split.gif", "ripple.gif", "roast.gif", "roll.gif", "rotate-180.gif", "rotate-45.gif", "rotate-90.gif", "rubber-stamp.gif", "rubber.gif", "runway-landing.gif", "runway-takeoff.gif", "scanline.gif", "scanning.gif", "scared.gif", "scroll.gif", "shake.gif", "shimmer.gif", "shudder.gif", "shy-peek.gif", "sideeye-slide.gif", "sign.gif", "skibidi.gif", "skid-stop.gif", "slap.gif", "slice.gif", "slide-bounce.gif", "slide-spin.gif", "slide.gif", "snap.gif", "solarize-wave.gif", "sparkle-color.gif", "sparkle-party.gif", "sparkle-rainbow.gif", "sparkle.gif", "sphere.gif", "spin.gif", "spiral-in.gif", "spiral-zoom.gif", "spotlight.gif", "squad.gif", "squeeze.gif", "stomp.gif", "stretch.gif", "strobe-soft.gif", "sway.gif", "sweep.gif", "swirl.gif", "teleport.gif", "thanos-snap.gif", "tidal-wave.gif", "tilt-nod.gif", "tilt-zoom.gif", "tilt.gif", "toilet-bounce.gif", "toilet-spin-thick.gif", "toilet-spin.gif", "tornado.gif", "touch-grass.gif", "treasure-chest.gif", "triggered.gif", "tsunami.gif", "tumble.gif", "twirl.gif", "underwater.gif", "washing-machine.gif", "wave-ocean.gif", "wave.gif", "weird.gif", "wiggle-shear.gif", "wildfire.gif", "will-slap.gif", "wipe.gif", "wobble-scale.gif", "wobble.gif", "wormhole.gif", "zoom-close.gif", "zoom-in.gif", "zoom.gif"];
 
 function MemeGallery() {
   const [page, setPage] = useState(0)
   const perPage = 8
-  const pages   = Math.ceil(MEME_ICONS.length / perPage)
+  const pages = Math.ceil(MEME_ICONS.length / perPage)
   const visible = MEME_ICONS.slice(page * perPage, page * perPage + perPage)
 
   return (
@@ -778,8 +780,8 @@ function Footer() {
             strokeLinejoin="round"
             className="flex-shrink-0 ml-1"
           >
-            <rect x="9" y="9" width="13" height="13" rx="2"/>
-            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+            <rect x="9" y="9" width="13" height="13" rx="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
           </svg>
           {copied && <span style={{ color: GOLD, fontSize: 12, marginLeft: 4 }}>Copied!</span>}
         </button>
@@ -803,7 +805,7 @@ function Footer() {
         {/* JOIN THE CULT button */}
         <div className="flex justify-center mb-8 w-full">
           <a
-            href="#howtobuy"
+            href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             className="uppercase text-black hover:brightness-110 transition whitespace-nowrap"
             style={{
               fontFamily: "'Finger Paint', cursive",
@@ -830,7 +832,7 @@ function Footer() {
             <img src="/telegram.svg" alt="Telegram" width={16} height={16} />
           </a>
           <a
-            href="#"
+            href="https://x.com/LetsFkinGoooo" target="_blank" rel="noopener noreferrer"
             aria-label="X / Twitter"
             className="w-10 h-10 rounded-full flex items-center justify-center transition hover:border-white/30 hover:opacity-100"
             style={{ border: '1px solid rgba(255,255,255,0.12)', opacity: 0.4 }}
